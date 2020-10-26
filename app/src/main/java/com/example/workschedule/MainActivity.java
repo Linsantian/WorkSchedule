@@ -3,6 +3,7 @@ package com.example.workschedule;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.style.TtsSpan;
 import android.util.Log;
@@ -36,11 +37,10 @@ import jxl.read.biff.BiffException;
 //import jxl.Workbook;
 
 public class MainActivity extends AppCompatActivity {
-
+    SQLiteDatabase database ;
 
     private static final int REQUEST_CHOOSEFILE =901 ;
     private int mIconType;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this, functional_zone.class);
-startActivity(intent);
+                startActivity(intent);
             }
         });
 
